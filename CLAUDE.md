@@ -15,20 +15,28 @@
 
 ## 에이전트 픽셀 오피스 (실시간 시각화 대시보드)
 
-- URL: https://claude.ai/code/artifact/49e27c43-71cb-488a-812f-b9edd4b2b971
-- claude.ai Artifact의 `db`(실시간 공유 문서 DB) 기능으로 동작하는, 4개 서브에이전트를 픽셀 아트
-  캐릭터로 시각화하는 페이지. 이미 게시되어 있으므로 **새로 만들지 말고 이 URL을 계속 재사용**한다
-  (Artifact 도구에 `url` 파라미터로 이 주소를 넘겨서 `write_db`/재게시).
-- DB 스키마:
-  - `agents/report-reader`, `agents/structure-planner`, `agents/slide-writer`, `agents/ppt-builder`
-    각 문서: `{ state, label, updatedAt }`
-    - `state`: `idle | thinking | reading | typing | bash | waiting | done` 중 하나
-    - 서브에이전트 호출 직전 = 진행 상태(reading/typing/thinking/bash 등)로 update,
-      호출 완료 직후 = `done`으로 update. `label`은 사람이 읽을 짧은 한국어 설명.
-  - `activity/feed` 문서: `{ stage, artifact, log: [{t, agent, icon, text}, ...] }`
-    - `log`는 최신 항목이 배열 끝에 오도록 append하고 최근 30~40개만 유지(용량 제한 때문에 통 문서 하나에 배열로 관리).
-- 페이지 자체(HTML)는 `.claude/agents/` 정의와 무관하게 독립적으로 존재하므로, 코드를 다시 안 짜도
-  DB만 갱신하면 시각화가 살아있다.
+두 버전이 있고, **아티팩트마다 db가 완전히 분리된 별도 저장소**라서 상태를 반영하려면
+**두 URL 모두에 각각 write_db 해야 한다** (하나만 갱신하면 다른 쪽은 안 바뀜):
+
+- 전체 버전 (설명 + 파이프라인 표시줄 + 활동 로그): https://claude.ai/code/artifact/49e27c43-71cb-488a-812f-b9edd4b2b971
+- 미니 버전 (그림만, 설명 없음): https://claude.ai/code/artifact/eee767d7-bbd6-4153-aef9-3fd8c619b889
+- 자세한 설명/문서: `docs/pixel-office.md`
+
+claude.ai Artifact의 `db`(실시간 공유 문서 DB) 기능으로 동작하는, 4개 서브에이전트를 픽셀 아트
+캐릭터로 시각화하는 페이지들. 이미 게시되어 있으므로 **새로 만들지 말고 이 URL들을 계속 재사용**한다
+(Artifact 도구에 `url` 파라미터로 해당 주소를 넘겨서 `write_db`/재게시).
+
+DB 스키마 (두 아티팩트 공통):
+- `agents/report-reader`, `agents/structure-planner`, `agents/slide-writer`, `agents/ppt-builder`
+  각 문서: `{ state, label, updatedAt }`
+  - `state`: `idle | thinking | reading | typing | bash | waiting | done` 중 하나
+  - 서브에이전트 호출 직전 = 진행 상태(reading/typing/thinking/bash 등)로 update,
+    호출 완료 직후 = `done`으로 update. `label`은 사람이 읽을 짧은 한국어 설명.
+- `activity/feed` 문서 (전체 버전에서만 표시됨): `{ stage, artifact, log: [{t, agent, icon, text}, ...] }`
+  - `log`는 최신 항목이 배열 끝에 오도록 append하고 최근 30~40개만 유지(용량 제한 때문에 통 문서 하나에 배열로 관리).
+
+페이지 자체(HTML)는 `.claude/agents/` 정의와 무관하게 독립적으로 존재하므로, 코드를 다시 안 짜도
+DB만 갱신하면 시각화가 살아있다.
 
 ## 재사용 관련 참고
 
