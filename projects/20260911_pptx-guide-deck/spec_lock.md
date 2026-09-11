@@ -8,19 +8,19 @@
 - mode: instructional
 
 ## visual_style
-- visual_style: soft-rounded
+- visual_style: sketch-notes
 
 ## colors
-- bg: #FFFFFF
-- secondary_bg: #F4F7FB
-- surface: #FFFFFF
+- bg: #FBF3E7
+- secondary_bg: #FFF8EC
+- surface: #FFF8EC
 - primary: #1565C0
 - accent: #FF6B35
 - secondary_accent: #0D47A1
-- text: #1D2733
-- text_secondary: #5B6B7C
-- text_tertiary: #94A3B3
-- border: #E2E8F0
+- text: #2B2420
+- text_secondary: #6B5D4F
+- text_tertiary: #A69783
+- border: #2B2420
 - success: #2E7D32
 - warning: #C62828
 
@@ -39,9 +39,8 @@
 - footnote: 16
 
 ## icons
-- library: tabler-outline
-- stroke_width: 2
-- inventory: browser, circle-check, git-branch, git-pull-request, brand-github, file-text, presentation, robot, puzzle-2, settings-2, route-2, users-group, book, rocket, download, lock, file-word
+- library: phosphor-duotone
+- inventory: browser, check-circle, git-branch, git-pull-request, github-logo, file-text, presentation, robot, puzzle-piece, gear-six, flow-arrow, users-three, book, rocket-launch, download, lock, file-doc
 
 ## page_rhythm
 - P01: anchor

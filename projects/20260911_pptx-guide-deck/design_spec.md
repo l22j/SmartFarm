@@ -7,7 +7,7 @@
 | **Project Name** | pptx-guide-deck |
 | **Canvas Format** | PPT 16:9 (1280×720) |
 | **Page Count** | 14 |
-| **Design Style** | instructional × soft-rounded |
+| **Design Style** | instructional × sketch-notes (사용자 요청으로 디자인만 재작업; 구조·문구는 v1과 동일) |
 | **Target Audience** | 브라우저 Claude Code로 문서 자동화(PPT/DOCX)를 처음 시작하는 사내 실무자 (개발 경험 적음) |
 | **Use Case** | 사내 교육/온보딩 세션 발표 자료 (약 20분) |
 | **Delivery Purpose** | `balanced` — 발표 + 이후 참고 문서로도 열람 |
@@ -32,29 +32,31 @@
 
 ### Theme Style
 
-- **Mode**: instructional — 개념 분해 → 단계별 설명, 튜토리얼/온보딩 콘텐츠 표준 매칭
-- **Visual style**: soft-rounded — 둥근 카드, 부드러운 elevation, 친근한 리듬 (Product/SaaS/training 권장 스타일)
-- **Theme**: Light theme
-- **Tone**: 실무 교육용, 친절하지만 군더더기 없음
+- **Mode**: instructional — 개념 분해 → 단계별 설명, 튜토리얼/온보딩 콘텐츠 표준 매칭 (변경 없음)
+- **Visual style**: sketch-notes — 따뜻한 종이 배경, 손그림 잉크 라인, 파스텔 톤 블록, 그림자 없는 플랫 2D. 교육/온보딩 콘텐츠에 가장 특징적으로 어울리는 스타일 (사용자가 v2에서 직접 선택)
+- **Theme**: Light theme (warm paper)
+- **Tone**: 실무 교육용이지만 손그림 톤으로 한층 친근하고 편안한 느낌
 
 ### Color Scheme
 
+> **재구성(Upstream override reconciliation)**: 사용자가 확정했던 primary/accent/secondary_accent(Tech Blue)는 그대로 유지. visual_style이 soft-rounded → sketch-notes로 바뀌면서, 그 스타일이 요구하는 "따뜻한 종이 배경 + 부드러운 파스텔 톤 블록" 규칙에 맞춰 배경·표면·텍스트·보더 색만 재파생함(§e 재파생 규칙).
+
 | Role | HEX | Purpose |
 | ---- | --- | ------- |
-| **Background** | `#FFFFFF` | 페이지 배경 |
-| **Secondary bg** | `#F4F7FB` | 카드/섹션 배경 |
-| **Surface** | `#FFFFFF` | 카드 표면 (soft shadow로 배경과 구분) |
-| **Primary** | `#1565C0` | 타이틀 강조, 주요 섹션, 아이콘 |
-| **Accent** | `#FF6B35` | 핵심 정보, 강조 포인트 |
-| **Secondary accent** | `#0D47A1` | 보조 강조, 그라데이션 |
-| **Body text** | `#1D2733` | 본문 텍스트 |
-| **Secondary text** | `#5B6B7C` | 캡션, 주석 |
-| **Tertiary text** | `#94A3B3` | 부가정보, 푸터 |
-| **Border/divider** | `#E2E8F0` | 카드 테두리, 구분선 |
+| **Background** | `#FBF3E7` | 따뜻한 종이(paper) 배경 |
+| **Secondary bg** | `#FFF8EC` | 카드/섹션 배경 (paper보다 살짝 밝은 톤) |
+| **Surface** | `#FFF8EC` | 카드 표면 (그림자 없이 플랫) |
+| **Primary** | `#1565C0` | 강조 화살표·아이콘·핵심 포인트 (사용자 확정 유지) |
+| **Accent** | `#FF6B35` | 핵심 정보, 강조 포인트 (사용자 확정 유지) |
+| **Secondary accent** | `#0D47A1` | 보조 강조 (사용자 확정 유지) |
+| **Body text** | `#2B2420` | 따뜻한 잉크 블랙 본문 텍스트 |
+| **Secondary text** | `#6B5D4F` | 캡션, 주석 (따뜻한 브라운그레이) |
+| **Tertiary text** | `#A69783` | 부가정보, 푸터 |
+| **Border/divider** | `#2B2420` | 손그림 잉크 윤곽선 (얇게, 낮은 불투명도로 사용) |
 | **Success** | `#2E7D32` | 체크/완료 표시 |
 | **Warning** | `#C62828` | 주의(보안/기밀) 표시 |
 
-> Note: Tech/개발도구 온보딩 콘텐츠에 맞춘 밝은 블루 계열 팔레트(사용자 확인 완료).
+> 색상 사용 원칙: primary/accent/secondary_accent는 카드 안에서 저채도 파스텔 틴트(해당 색의 낮은 fill-opacity)로 사용하고, 진한 채도는 화살표·아이콘·포인트 강조 한 곳에만 남겨둔다(sketch-notes §3 "one accent reserved for a key arrow or emphasis").
 
 ### Gradient Scheme
 
@@ -75,7 +77,7 @@
 
 ### Font Plan
 
-**Typography direction**: Pretendard 고정 (이 환경의 install-local 폰트 락) — 친근한 산세리프, soft-rounded 스타일의 둥근 letterform과 부합.
+**Typography direction**: Pretendard 고정 (이 환경의 install-local 폰트 락) — 다른 패밀리 선택은 불가하므로, sketch-notes가 요구하는 "손그림 느낌"은 폰트 대신 손그림 언더라인·회전된 태그·웨이브 커넥터 같은 장식 요소로 구현.
 
 | Role | Chinese | English | Fallback tail |
 | ---- | ------- | ------- | ------------- |
@@ -119,7 +121,7 @@
 
 ### Layout Pattern Library 사용 계획
 
-- 표지/마무리(P01, P14): Single column centered + 원형 데코 블롭 (soft-rounded 특징)
+- 표지/마무리(P01, P14): Single column centered + 손그림 웨이브 밑줄·별 도들 장식 (sketch-notes 특징)
 - 체크리스트/리스트형(P05, P08, P13): Vertical list, 아이콘 + 텍스트 행
 - 비교/개요형(P02, P11): Asymmetric/Symmetric split — 좌우 2단 레인
 - 표형(P03, P04): 카드 그리드 (3~4 컬럼)
@@ -150,29 +152,29 @@
 
 ### Source
 
-- **Built-in icon library**: `templates/icons/tabler-outline/` — stroke_width 2 고정
+- **Built-in icon library**: `templates/icons/phosphor-duotone/` — duotone(메인 셰이프 + 20% 백플레이트), sketch-notes의 부드럽고 친근한 캐릭터에 tabler-outline보다 더 잘 맞아 재선정(§d Layer 2 재파생)
 
 ### Recommended Icon List
 
 | Purpose | Icon Path | Page |
 | ------- | --------- | ---- |
-| 브라우저 | `tabler-outline/browser` | P01, P05 |
-| 체크리스트/완료 | `tabler-outline/circle-check` | P05, P13 |
-| GitHub 계정/저장소 | `tabler-outline/brand-github` | P05, P06 |
-| Fork/브랜치 | `tabler-outline/git-branch` | P06, P09 |
-| PR/머지 | `tabler-outline/git-pull-request` | P09 |
-| 문서(원본) | `tabler-outline/file-text` | P02, P07 |
-| DOCX 파일 | `tabler-outline/file-word` | P07, P12 |
-| PPT 산출물 | `tabler-outline/presentation` | P02, P08 |
-| AI/Claude | `tabler-outline/robot` | P01, P04 |
-| Skill 개념 | `tabler-outline/puzzle-2` | P04 |
-| Subagent 개념 | `tabler-outline/settings-2` | P04, P10 |
-| 파이프라인/흐름 | `tabler-outline/route-2` | P02, P10, P11 |
-| 청중/팀 | `tabler-outline/users-group` | P04 |
-| 매뉴얼/가이드 | `tabler-outline/book` | P04 |
-| 시작/실행 | `tabler-outline/rocket` | P14 |
-| 다운로드 | `tabler-outline/download` | P07, P12 |
-| 보안/Private | `tabler-outline/lock` | P06, P13 |
+| 브라우저 | `phosphor-duotone/browser` | P01, P05 |
+| 체크리스트/완료 | `phosphor-duotone/check-circle` | P05, P13 |
+| GitHub 계정/저장소 | `phosphor-duotone/github-logo` | P05, P06 |
+| Fork/브랜치 | `phosphor-duotone/git-branch` | P06, P09 |
+| PR/머지 | `phosphor-duotone/git-pull-request` | P09 |
+| 문서(원본) | `phosphor-duotone/file-text` | P02, P07 |
+| DOCX 파일 | `phosphor-duotone/file-doc` | P07, P12 |
+| PPT 산출물 | `phosphor-duotone/presentation` | P02, P08 |
+| AI/Claude | `phosphor-duotone/robot` | P01, P04 |
+| Skill 개념 | `phosphor-duotone/puzzle-piece` | P04 |
+| Subagent 개념 | `phosphor-duotone/gear-six` | P04, P10 |
+| 파이프라인/흐름 | `phosphor-duotone/flow-arrow` | P02, P10, P11 |
+| 청중/팀 | `phosphor-duotone/users-three` | P04 |
+| 매뉴얼/가이드 | `phosphor-duotone/book` | P04 |
+| 시작/실행 | `phosphor-duotone/rocket-launch` | P14 |
+| 다운로드 | `phosphor-duotone/download` | P07, P12 |
+| 보안/Private | `phosphor-duotone/lock` | P06, P13 |
 
 ---
 
