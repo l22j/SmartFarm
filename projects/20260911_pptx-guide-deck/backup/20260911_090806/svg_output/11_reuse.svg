@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 720" data-pptx-page-role="content">
+  <rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="64" y="106" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="42" font-weight="800" fill="#1D2733">파이프라인 실행과 다음 번 재사용</text>
+    <text x="64" y="150" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#0D47A1">한 번 만들어두면 다음 달부터는 원본 경로만 바꾼</text>
+    <text x="64" y="188" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#0D47A1">세 줄 프롬프트로 같은 4단계가 그대로 재사용된다</text>
+  </g>
+
+  <g id="panel-first-run">
+    <rect x="64" y="248" width="544" height="270" rx="16" fill="#F4F7FB"/>
+    <use data-icon="tabler-outline/route-2" x="96" y="272" width="26" height="26" fill="#1565C0" stroke-width="2"/>
+    <text x="132" y="292" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">최초 실행 — 4단계 상세 지시</text>
+    <rect x="96" y="316" width="480" height="176" rx="10" fill="#1D2733"/>
+    <text x="116" y="346" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="16" fill="#FFFFFF">1단계: content-planner로 구조 설계</text>
+    <text x="116" y="374" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="16" fill="#FFFFFF">2단계: slide-writer로 문구 작성</text>
+    <text x="116" y="402" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="16" fill="#FFFFFF">3단계: ppt-builder로 PPTX 생성</text>
+    <text x="116" y="430" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="16" fill="#FFFFFF">4단계: ppt-reviewer로 검수</text>
+    <text x="116" y="466" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" fill="#94A3B3">각 단계 결과는 artifacts/ 폴더에 저장</text>
+  </g>
+
+  <g id="panel-reuse">
+    <rect x="672" y="248" width="544" height="270" rx="16" fill="#FF6B35" fill-opacity="0.08"/>
+    <use data-icon="tabler-outline/circle-check" x="704" y="272" width="26" height="26" fill="#FF6B35" stroke-width="2"/>
+    <text x="740" y="292" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">재사용 — 세 줄 프롬프트</text>
+    <rect x="704" y="316" width="480" height="176" rx="10" fill="#1D2733"/>
+    <text x="724" y="352" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="16" fill="#FFFFFF">projects/2026-10/실적보고서.pdf 원본</text>
+    <text x="724" y="380" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="16" fill="#FFFFFF">지난번과 같은 파이프라인 실행</text>
+    <text x="724" y="408" font-family="Consolas, &quot;Courier New&quot;, monospace" font-size="16" fill="#FFFFFF">결과: outputs/2026-10-report.pptx</text>
+    <text x="724" y="466" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" fill="#94A3B3">에이전트는 이미 저장소에 있으니 재생성 불필요</text>
+  </g>
+
+  <g id="note-1">
+    <rect x="64" y="546" width="544" height="60" rx="14" fill="#F4F7FB"/>
+    <text x="96" y="582" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">검수 이슈 발견 시 해당 단계만 재실행</text>
+  </g>
+  <g id="note-2">
+    <rect x="672" y="546" width="544" height="60" rx="14" fill="#F4F7FB"/>
+    <text x="704" y="582" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">에이전트는 저장소에 이미 존재, 재생성 불필요</text>
+  </g>
+
+  <g id="footer-caption">
+    <rect x="64" y="628" width="700" height="42" rx="21" fill="#FF6B35" fill-opacity="0.08"/>
+    <text x="94" y="654" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" font-weight="600" fill="#1D2733">에이전트는 이미 저장소에 있어 이름만 부르면 재사용</text>
+  </g>
+
+  <g id="page-number">
+    <text x="1216" y="690" text-anchor="end" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" fill="#94A3B3">11 / 14</text>
+  </g>
+</svg>

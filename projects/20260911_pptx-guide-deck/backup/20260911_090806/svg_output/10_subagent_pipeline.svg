@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 720" data-pptx-page-role="content">
+  <defs>
+    <marker id="arrowGray10" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <polygon points="0,1 8,5 0,9" fill="#94A3B3"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="64" y="106" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="42" font-weight="800" fill="#1D2733">Level 3: 4개 서브에이전트 파이프라인</text>
+    <text x="64" y="150" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#0D47A1">PPT 제작 과정을 4개 서브에이전트로 나누면</text>
+    <text x="64" y="188" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#0D47A1">단계별 재실행과 재사용이 가능해진다</text>
+  </g>
+
+  <line x1="324" y1="378" x2="348" y2="378" stroke="#94A3B3" stroke-width="2.5" marker-end="url(#arrowGray10)"/>
+  <line x1="608" y1="378" x2="632" y2="378" stroke="#94A3B3" stroke-width="2.5" marker-end="url(#arrowGray10)"/>
+  <line x1="892" y1="378" x2="916" y2="378" stroke="#94A3B3" stroke-width="2.5" marker-end="url(#arrowGray10)"/>
+
+  <g id="stage-1">
+    <rect x="64" y="250" width="260" height="290" rx="14" fill="#F4F7FB"/>
+    <path d="M 76 250 h 236 a 12 12 0 0 1 12 12 v 46 h -260 v -46 a 12 12 0 0 1 12 -12 Z" fill="#1565C0"/>
+    <circle cx="96" cy="284" r="16" fill="#FFFFFF"/>
+    <text x="96" y="290" text-anchor="middle" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" font-weight="800" fill="#1565C0">1</text>
+    <text x="122" y="290" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="20" font-weight="600" fill="#FFFFFF">content-planner</text>
+    <text x="88" y="352" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">원본 분석 후</text>
+    <text x="88" y="376" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">슬라이드 구조 설계</text>
+    <rect x="88" y="470" width="184" height="46" rx="8" fill="#0D47A1" fill-opacity="0.08"/>
+    <text x="180" y="493" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="600" fill="#0D47A1">출력 · structure.json</text>
+  </g>
+
+  <g id="stage-2">
+    <rect x="348" y="250" width="260" height="290" rx="14" fill="#F4F7FB"/>
+    <path d="M 360 250 h 236 a 12 12 0 0 1 12 12 v 46 h -260 v -46 a 12 12 0 0 1 12 -12 Z" fill="#0D47A1"/>
+    <circle cx="380" cy="284" r="16" fill="#FFFFFF"/>
+    <text x="380" y="290" text-anchor="middle" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" font-weight="800" fill="#0D47A1">2</text>
+    <text x="406" y="290" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="20" font-weight="600" fill="#FFFFFF">slide-writer</text>
+    <text x="372" y="352" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">구조 JSON 기반</text>
+    <text x="372" y="376" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">슬라이드별 문구 작성</text>
+    <rect x="372" y="470" width="184" height="46" rx="8" fill="#0D47A1" fill-opacity="0.08"/>
+    <text x="464" y="493" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="600" fill="#0D47A1">출력 · copy.json</text>
+  </g>
+
+  <g id="stage-3">
+    <rect x="632" y="250" width="260" height="290" rx="14" fill="#F4F7FB"/>
+    <path d="M 644 250 h 236 a 12 12 0 0 1 12 12 v 46 h -260 v -46 a 12 12 0 0 1 12 -12 Z" fill="#FF6B35"/>
+    <circle cx="664" cy="284" r="16" fill="#FFFFFF"/>
+    <text x="664" y="290" text-anchor="middle" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" font-weight="800" fill="#FF6B35">3</text>
+    <text x="690" y="290" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="20" font-weight="600" fill="#FFFFFF">ppt-builder</text>
+    <text x="656" y="352" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">ppt-master 스킬로</text>
+    <text x="656" y="376" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">PPTX 실제 생성</text>
+    <rect x="656" y="470" width="184" height="46" rx="8" fill="#FF6B35" fill-opacity="0.10"/>
+    <text x="748" y="493" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="600" fill="#FF6B35">출력 · final.pptx</text>
+  </g>
+
+  <g id="stage-4">
+    <rect x="916" y="250" width="260" height="290" rx="14" fill="#F4F7FB"/>
+    <path d="M 928 250 h 236 a 12 12 0 0 1 12 12 v 46 h -260 v -46 a 12 12 0 0 1 12 -12 Z" fill="#2E7D32"/>
+    <circle cx="948" cy="284" r="16" fill="#FFFFFF"/>
+    <text x="948" y="290" text-anchor="middle" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" font-weight="800" fill="#2E7D32">4</text>
+    <text x="974" y="290" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="20" font-weight="600" fill="#FFFFFF">ppt-reviewer</text>
+    <text x="940" y="352" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">원본과 PPTX</text>
+    <text x="940" y="376" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">대조 검수</text>
+    <rect x="940" y="470" width="184" height="46" rx="8" fill="#2E7D32" fill-opacity="0.10"/>
+    <text x="1032" y="493" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="600" fill="#2E7D32">출력 · 검수 리포트</text>
+  </g>
+
+  <g id="footer-caption">
+    <rect x="64" y="600" width="640" height="42" rx="21" fill="#F4F7FB"/>
+    <text x="94" y="626" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">단발성이면 생략 가능, 반복 업무·팀 표준화 시 필요</text>
+  </g>
+
+  <g id="page-number">
+    <text x="1216" y="690" text-anchor="end" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" fill="#94A3B3">10 / 14</text>
+  </g>
+</svg>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 720" data-pptx-page-role="content">
+  <defs>
+    <marker id="arrowGray" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <polygon points="0,1 8,5 0,9" fill="#94A3B3"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="64" y="106" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="42" font-weight="800" fill="#1D2733">오늘 만드는 것: PPT와 HWP</text>
+    <text x="64" y="150" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#0D47A1">원본 문서 하나만 있으면 PPT와 한글 문서(HWP)</text>
+    <text x="64" y="188" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#0D47A1">두 산출물을 브라우저에서 바로 만들 수 있다</text>
+  </g>
+
+  <g id="prereq-note">
+    <rect x="390" y="204" width="500" height="42" rx="21" fill="#F4F7FB"/>
+    <use data-icon="tabler-outline/brand-github" x="410" y="215" width="20" height="20" fill="#1565C0" stroke-width="2"/>
+    <text x="440" y="230" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">브라우저 Claude Code 실행 + GitHub 저장소 연결 후 시작</text>
+  </g>
+
+  <g id="panel-ppt">
+    <rect x="64" y="270" width="560" height="350" rx="16" fill="#F4F7FB"/>
+    <use data-icon="tabler-outline/presentation" x="96" y="298" width="32" height="32" fill="#1565C0" stroke-width="2"/>
+    <text x="140" y="322" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">PPT 파이프라인</text>
+    <text x="96" y="362" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">원본 문서 첨부 + 프롬프트 한 번</text>
+    <text x="96" y="386" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">→ 서브에이전트 4개로 다음 달까지 재사용</text>
+
+    <g id="ppt-chip-1">
+      <rect x="96" y="430" width="112" height="70" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+      <circle cx="122" cy="455" r="12" fill="#1565C0"/>
+      <text x="122" y="460" text-anchor="middle" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">1</text>
+      <text x="152" y="460" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="600" fill="#1D2733">content-</text>
+      <text x="106" y="482" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="600" fill="#1D2733">planner</text>
+    </g>
+    <line x1="208" y1="465" x2="238" y2="465" stroke="#94A3B3" stroke-width="2" marker-end="url(#arrowGray)"/>
+    <g id="ppt-chip-2">
+      <rect x="238" y="430" width="112" height="70" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+      <circle cx="264" cy="455" r="12" fill="#1565C0"/>
+      <text x="264" y="460" text-anchor="middle" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">2</text>
+      <text x="294" y="460" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="600" fill="#1D2733">slide-</text>
+      <text x="248" y="482" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="600" fill="#1D2733">writer</text>
+    </g>
+    <line x1="350" y1="465" x2="380" y2="465" stroke="#94A3B3" stroke-width="2" marker-end="url(#arrowGray)"/>
+    <g id="ppt-chip-3">
+      <rect x="380" y="430" width="112" height="70" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+      <circle cx="406" cy="455" r="12" fill="#1565C0"/>
+      <text x="406" y="460" text-anchor="middle" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">3</text>
+      <text x="424" y="460" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="600" fill="#1D2733">ppt-</text>
+      <text x="390" y="482" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="600" fill="#1D2733">builder</text>
+    </g>
+    <line x1="128" y1="516" x2="128" y2="516" stroke="none"/>
+    <g id="ppt-chip-4" transform="translate(96,516)">
+      <rect x="0" y="0" width="480" height="60" rx="12" fill="#1565C0"/>
+      <circle cx="26" cy="30" r="12" fill="#FFFFFF"/>
+      <text x="26" y="35" text-anchor="middle" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="700" fill="#1565C0">4</text>
+      <text x="52" y="36" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" font-weight="600" fill="#FFFFFF">ppt-reviewer — 원본과 대조 검수</text>
+    </g>
+  </g>
+
+  <g id="panel-hwp">
+    <rect x="656" y="270" width="560" height="350" rx="16" fill="#F4F7FB"/>
+    <use data-icon="tabler-outline/file-word" x="688" y="298" width="32" height="32" fill="#0D47A1" stroke-width="2"/>
+    <text x="732" y="322" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">한글 문서(HWP) 파이프라인</text>
+    <text x="688" y="362" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">docx 스킬로 회사 양식 유지한 채</text>
+    <text x="688" y="386" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">내용만 교체 → 한컴에서 HWP로 저장</text>
+
+    <g id="hwp-chip-1">
+      <rect x="688" y="430" width="150" height="70" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+      <circle cx="714" cy="455" r="12" fill="#0D47A1"/>
+      <text x="714" y="460" text-anchor="middle" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">1</text>
+      <text x="744" y="460" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="600" fill="#1D2733">docx</text>
+      <text x="700" y="482" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="600" fill="#1D2733">스킬 실행</text>
+    </g>
+    <line x1="838" y1="465" x2="868" y2="465" stroke="#94A3B3" stroke-width="2" marker-end="url(#arrowGray)"/>
+    <g id="hwp-chip-2">
+      <rect x="868" y="430" width="150" height="70" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5"/>
+      <circle cx="894" cy="455" r="12" fill="#0D47A1"/>
+      <text x="894" y="460" text-anchor="middle" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">2</text>
+      <text x="924" y="460" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="600" fill="#1D2733">DOCX</text>
+      <text x="880" y="482" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="600" fill="#1D2733">생성</text>
+    </g>
+    <line x1="1018" y1="465" x2="1048" y2="465" stroke="#94A3B3" stroke-width="2" marker-end="url(#arrowGray)"/>
+    <g id="hwp-chip-3">
+      <rect x="688" y="516" width="480" height="60" rx="12" fill="#0D47A1"/>
+      <circle cx="714" cy="546" r="12" fill="#FFFFFF"/>
+      <text x="714" y="551" text-anchor="middle" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" font-weight="700" fill="#0D47A1">3</text>
+      <text x="740" y="552" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" font-weight="600" fill="#FFFFFF">한컴에서 다른 이름으로 저장(HWP)</text>
+    </g>
+  </g>
+
+  <g id="page-number">
+    <text x="1216" y="690" text-anchor="end" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" fill="#94A3B3">2 / 14</text>
+  </g>
+</svg>

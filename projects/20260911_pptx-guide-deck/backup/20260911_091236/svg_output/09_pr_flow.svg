@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 720" data-pptx-page-role="content">
+  <defs>
+    <marker id="arrowGray09" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <polygon points="0,1 8,5 0,9" fill="#94A3B3"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="64" y="106" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="42" font-weight="800" fill="#1D2733">결과 확인과 GitHub 자동 반영</text>
+    <text x="64" y="150" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#0D47A1">Claude가 만든 PPT는 자동으로 브랜치·PR로 올라오며,</text>
+    <text x="64" y="188" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#0D47A1">사용자는 PR 링크에서 Merge 한 번으로 최종 반영한다</text>
+  </g>
+
+  <line x1="254" y1="335" x2="292" y2="335" stroke="#94A3B3" stroke-width="2.5" marker-end="url(#arrowGray09)"/>
+  <line x1="482" y1="335" x2="520" y2="335" stroke="#94A3B3" stroke-width="2.5" marker-end="url(#arrowGray09)"/>
+  <line x1="710" y1="335" x2="748" y2="335" stroke="#94A3B3" stroke-width="2.5" marker-end="url(#arrowGray09)"/>
+  <line x1="938" y1="335" x2="976" y2="335" stroke="#94A3B3" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#arrowGray09)"/>
+
+  <g id="pr-node-1">
+    <rect x="64" y="260" width="190" height="150" rx="16" fill="#F4F7FB"/>
+    <use data-icon="tabler-outline/robot" x="96" y="284" width="30" height="30" fill="#1565C0" stroke-width="2"/>
+    <text x="96" y="348" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">격리 VM</text>
+    <text x="96" y="378" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">파일 생성</text>
+  </g>
+
+  <g id="pr-node-2">
+    <rect x="292" y="260" width="190" height="150" rx="16" fill="#F4F7FB"/>
+    <use data-icon="tabler-outline/git-branch" x="324" y="284" width="30" height="30" fill="#1565C0" stroke-width="2"/>
+    <text x="324" y="348" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">브랜치</text>
+    <text x="324" y="378" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">자동 생성</text>
+  </g>
+
+  <g id="pr-node-3">
+    <rect x="520" y="260" width="190" height="150" rx="16" fill="#F4F7FB"/>
+    <use data-icon="tabler-outline/file-text" x="552" y="284" width="30" height="30" fill="#1565C0" stroke-width="2"/>
+    <text x="552" y="348" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">커밋·push</text>
+    <text x="552" y="378" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">변경 내용 반영</text>
+  </g>
+
+  <g id="pr-node-4">
+    <rect x="748" y="260" width="190" height="150" rx="16" fill="#F4F7FB"/>
+    <use data-icon="tabler-outline/git-pull-request" x="780" y="284" width="30" height="30" fill="#1565C0" stroke-width="2"/>
+    <text x="780" y="348" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">PR 생성</text>
+    <text x="780" y="378" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">초안 자동 생성</text>
+  </g>
+
+  <g id="pr-node-5">
+    <rect x="976" y="260" width="190" height="150" rx="16" fill="#FF6B35"/>
+    <use data-icon="tabler-outline/circle-check" x="1008" y="284" width="30" height="30" fill="#FFFFFF" stroke-width="2"/>
+    <text x="1008" y="348" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#FFFFFF">Merge</text>
+    <text x="1008" y="378" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#FFFFFF">사람이 클릭</text>
+  </g>
+
+  <g id="caption-1">
+    <rect x="64" y="450" width="420" height="42" rx="21" fill="#F4F7FB"/>
+    <text x="94" y="476" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">PR 확인과 Merge는 사람이 직접 클릭</text>
+  </g>
+  <g id="caption-2">
+    <rect x="504" y="450" width="480" height="42" rx="21" fill="#F4F7FB"/>
+    <text x="534" y="476" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">부분 수정은 채팅으로 즉시 요청 가능</text>
+  </g>
+
+  <g id="page-number">
+    <text x="1216" y="690" text-anchor="end" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" fill="#94A3B3">9 / 14</text>
+  </g>
+</svg>

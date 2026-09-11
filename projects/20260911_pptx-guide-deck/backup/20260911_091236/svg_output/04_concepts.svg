@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 720" data-pptx-page-role="content">
+  <rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="64" y="106" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="42" font-weight="800" fill="#1D2733">핵심 개념: Skill과 Subagent</text>
+    <text x="64" y="150" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#0D47A1">Skill은 AI가 참고하는 업무 매뉴얼이고,</text>
+    <text x="64" y="188" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#0D47A1">Subagent는 특정 역할을 전담하는 별도 담당자다</text>
+  </g>
+
+  <g id="pillar-claude">
+    <rect x="64" y="250" width="270" height="370" rx="16" fill="#F4F7FB" stroke="#E2E8F0" stroke-width="1.5"/>
+    <path d="M 76 250 h 246 a 12 12 0 0 1 12 12 v 88 h -270 v -88 a 12 12 0 0 1 12 -12 Z" fill="#1565C0"/>
+    <circle cx="199" cy="304" r="26" fill="#FFFFFF"/>
+    <use data-icon="tabler-outline/robot" x="187" y="292" width="24" height="24" fill="#1565C0" stroke-width="2"/>
+    <text x="199" y="362" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">Claude</text>
+    <line x1="88" y1="386" x2="310" y2="386" stroke="#E2E8F0" stroke-width="1.5"/>
+    <text x="199" y="450" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1565C0">신입 직원</text>
+  </g>
+
+  <g id="pillar-skill">
+    <rect x="358" y="250" width="270" height="370" rx="16" fill="#F4F7FB" stroke="#E2E8F0" stroke-width="1.5"/>
+    <path d="M 370 250 h 246 a 12 12 0 0 1 12 12 v 88 h -270 v -88 a 12 12 0 0 1 12 -12 Z" fill="#FF6B35"/>
+    <circle cx="493" cy="304" r="26" fill="#FFFFFF"/>
+    <use data-icon="tabler-outline/puzzle-2" x="481" y="292" width="24" height="24" fill="#FF6B35" stroke-width="2"/>
+    <text x="493" y="362" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">Skill</text>
+    <line x1="382" y1="386" x2="604" y2="386" stroke="#E2E8F0" stroke-width="1.5"/>
+    <text x="493" y="450" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#FF6B35">업무 매뉴얼</text>
+  </g>
+
+  <g id="pillar-subagent">
+    <rect x="652" y="250" width="270" height="370" rx="16" fill="#F4F7FB" stroke="#E2E8F0" stroke-width="1.5"/>
+    <path d="M 664 250 h 246 a 12 12 0 0 1 12 12 v 88 h -270 v -88 a 12 12 0 0 1 12 -12 Z" fill="#0D47A1"/>
+    <circle cx="787" cy="304" r="26" fill="#FFFFFF"/>
+    <use data-icon="tabler-outline/settings-2" x="775" y="292" width="24" height="24" fill="#0D47A1" stroke-width="2"/>
+    <text x="787" y="362" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">Subagent</text>
+    <line x1="676" y1="386" x2="898" y2="386" stroke="#E2E8F0" stroke-width="1.5"/>
+    <text x="787" y="450" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#0D47A1">옆 팀 담당자</text>
+  </g>
+
+  <g id="pillar-template">
+    <rect x="946" y="250" width="270" height="370" rx="16" fill="#F4F7FB" stroke="#E2E8F0" stroke-width="1.5"/>
+    <path d="M 958 250 h 246 a 12 12 0 0 1 12 12 v 88 h -270 v -88 a 12 12 0 0 1 12 -12 Z" fill="#2E7D32"/>
+    <circle cx="1081" cy="304" r="26" fill="#FFFFFF"/>
+    <use data-icon="tabler-outline/book" x="1069" y="292" width="24" height="24" fill="#2E7D32" stroke-width="2"/>
+    <text x="1081" y="362" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">Template</text>
+    <line x1="970" y1="386" x2="1192" y2="386" stroke="#E2E8F0" stroke-width="1.5"/>
+    <text x="1081" y="450" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#2E7D32">표준 양식</text>
+  </g>
+
+  <g id="page-number">
+    <text x="1216" y="690" text-anchor="end" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" fill="#94A3B3">4 / 14</text>
+  </g>
+</svg>

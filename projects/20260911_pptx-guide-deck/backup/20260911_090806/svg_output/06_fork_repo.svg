@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 720" data-pptx-page-role="content">
+  <defs>
+    <marker id="arrowGray06" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <polygon points="0,1 8,5 0,9" fill="#94A3B3"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="64" y="106" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="42" font-weight="800" fill="#1D2733">저장소 준비: slide-master Fork</text>
+    <text x="64" y="150" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#0D47A1">초보자는 slide-master 저장소를 Fork해서</text>
+    <text x="64" y="188" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#0D47A1">오늘 실습용 저장소로 사용한다</text>
+  </g>
+
+  <line x1="244" y1="300" x2="316" y2="300" stroke="#94A3B3" stroke-width="2.5" marker-end="url(#arrowGray06)"/>
+  <line x1="636" y1="300" x2="708" y2="300" stroke="#94A3B3" stroke-width="2.5" marker-end="url(#arrowGray06)"/>
+
+  <g id="fork-step-1">
+    <circle cx="244" cy="300" r="36" fill="#1565C0"/>
+    <text x="244" y="309" text-anchor="middle" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF">1</text>
+    <rect x="64" y="360" width="360" height="220" rx="14" fill="#F4F7FB"/>
+    <use data-icon="tabler-outline/brand-github" x="96" y="392" width="32" height="32" fill="#1565C0" stroke-width="2"/>
+    <text x="96" y="462" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">Fork 클릭</text>
+    <text x="96" y="494" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">slide-master 저장소</text>
+    <text x="96" y="520" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">우상단 Fork 버튼 클릭</text>
+  </g>
+
+  <g id="fork-step-2">
+    <circle cx="636" cy="300" r="36" fill="#1565C0"/>
+    <text x="636" y="309" text-anchor="middle" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF">2</text>
+    <rect x="456" y="360" width="360" height="220" rx="14" fill="#F4F7FB"/>
+    <use data-icon="tabler-outline/circle-check" x="488" y="392" width="32" height="32" fill="#1565C0" stroke-width="2"/>
+    <text x="488" y="462" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">Create fork 클릭</text>
+    <text x="488" y="494" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">Owner·Repository name</text>
+    <text x="488" y="520" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">확인 후 진행</text>
+  </g>
+
+  <g id="fork-step-3">
+    <circle cx="1028" cy="300" r="36" fill="#FF6B35"/>
+    <text x="1028" y="309" text-anchor="middle" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="800" fill="#FFFFFF">3</text>
+    <rect x="848" y="360" width="368" height="220" rx="14" fill="#FF6B35" fill-opacity="0.08"/>
+    <use data-icon="tabler-outline/git-branch" x="880" y="392" width="32" height="32" fill="#FF6B35" stroke-width="2"/>
+    <text x="880" y="462" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">저장소 연결</text>
+    <text x="880" y="494" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">Claude Code에서 Fork한</text>
+    <text x="880" y="520" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">저장소 선택 및 연결</text>
+  </g>
+
+  <g id="warning-caption">
+    <rect x="64" y="620" width="1152" height="60" rx="14" fill="#C62828" fill-opacity="0.08"/>
+    <rect x="64" y="620" width="6" height="60" rx="3" fill="#C62828"/>
+    <use data-icon="tabler-outline/lock" x="96" y="636" width="28" height="28" fill="#C62828" stroke-width="2"/>
+    <text x="140" y="658" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" font-weight="600" fill="#C62828">회사 기밀 저장소는 반드시 Private로 설정</text>
+  </g>
+
+  <g id="page-number">
+    <text x="1216" y="710" text-anchor="end" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" fill="#94A3B3">6 / 14</text>
+  </g>
+</svg>

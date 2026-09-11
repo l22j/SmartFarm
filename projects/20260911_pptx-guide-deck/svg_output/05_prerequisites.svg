@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 720" data-pptx-page-role="content">
+  <defs>
+    <linearGradient id="rail05" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1565C0"/>
+      <stop offset="100%" stop-color="#0D47A1"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="64" y="106" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="42" font-weight="800" fill="#1D2733">준비물: 계정 3종과 GitHub 연동</text>
+    <text x="64" y="150" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#0D47A1">이메일·GitHub·Claude Pro를 준비하고 GitHub 연동까지</text>
+    <text x="64" y="188" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#0D47A1">마치면 실습 준비가 끝난다</text>
+  </g>
+
+  <line x1="140" y1="255" x2="140" y2="605" stroke="url(#rail05)" stroke-width="4" stroke-linecap="round"/>
+
+  <g id="prereq-item-1">
+    <circle cx="140" cy="285" r="26" fill="#1565C0"/>
+    <text x="140" y="292" text-anchor="middle" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">1</text>
+    <rect x="200" y="253" width="1016" height="64" rx="12" fill="#F4F7FB"/>
+    <rect x="200" y="253" width="6" height="64" rx="3" fill="#1565C0"/>
+    <text x="228" y="282" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">이메일</text>
+    <text x="228" y="308" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">GitHub·Claude 가입용 준비</text>
+  </g>
+
+  <g id="prereq-item-2">
+    <circle cx="140" cy="379" r="26" fill="#1565C0"/>
+    <text x="140" y="386" text-anchor="middle" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">2</text>
+    <rect x="200" y="347" width="1016" height="64" rx="12" fill="#F4F7FB"/>
+    <rect x="200" y="347" width="6" height="64" rx="3" fill="#1565C0"/>
+    <text x="228" y="376" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">GitHub 계정</text>
+    <text x="228" y="402" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">Claude Code 파일 저장소 역할</text>
+  </g>
+
+  <g id="prereq-item-3">
+    <circle cx="140" cy="473" r="26" fill="#1565C0"/>
+    <text x="140" y="480" text-anchor="middle" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">3</text>
+    <rect x="200" y="441" width="1016" height="64" rx="12" fill="#F4F7FB"/>
+    <rect x="200" y="441" width="6" height="64" rx="3" fill="#1565C0"/>
+    <text x="228" y="470" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">Claude Pro 이상 플랜</text>
+    <text x="228" y="496" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">브라우저 Claude Code 사용 자격</text>
+  </g>
+
+  <g id="prereq-item-4">
+    <circle cx="140" cy="571" r="28" fill="#0D47A1"/>
+    <text x="140" y="578" text-anchor="middle" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">4</text>
+    <rect x="200" y="535" width="1016" height="72" rx="12" fill="#0D47A1" fill-opacity="0.08"/>
+    <rect x="200" y="535" width="6" height="72" rx="3" fill="#0D47A1"/>
+    <text x="228" y="568" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">claude.ai/code에서 GitHub 연동 완료</text>
+    <text x="228" y="594" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">Connect GitHub 버튼으로 권한 승인</text>
+  </g>
+
+  <g id="footer-caption">
+    <rect x="200" y="650" width="360" height="42" rx="21" fill="#F4F7FB"/>
+    <use data-icon="tabler-outline/circle-check" x="216" y="661" width="20" height="20" fill="#2E7D32" stroke-width="2"/>
+    <text x="246" y="676" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">이 준비는 최초 1회만 필요</text>
+  </g>
+
+  <g id="page-number">
+    <text x="1216" y="690" text-anchor="end" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" fill="#94A3B3">5 / 14</text>
+  </g>
+</svg>

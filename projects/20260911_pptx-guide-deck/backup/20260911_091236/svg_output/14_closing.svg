@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 720" data-pptx-page-role="ending">
+  <defs>
+    <radialGradient id="bgDecor14" cx="15%" cy="85%" r="55%">
+      <stop offset="0%" stop-color="#0D47A1" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0D47A1" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <g id="background">
+    <rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+    <circle cx="180" cy="640" r="360" fill="url(#bgDecor14)" fill-opacity="0.12"/>
+  </g>
+
+  <g id="eyebrow">
+    <rect x="440" y="90" width="400" height="48" rx="24" fill="#F4F7FB"/>
+    <use data-icon="tabler-outline/rocket" x="462" y="103" width="22" height="22" fill="#FF6B35" stroke-width="2"/>
+    <text x="496" y="120" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" font-weight="600" fill="#1D2733">오늘 핵심 한 줄</text>
+  </g>
+
+  <g id="quote">
+    <text x="640" y="260" text-anchor="middle" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="42" font-weight="800" fill="#1D2733">Skill은 일하는 방법,</text>
+    <text x="640" y="316" text-anchor="middle" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="42" font-weight="800" fill="#1565C0">Subagent는 특정 역할 담당자다</text>
+  </g>
+
+  <g id="sub-quote">
+    <text x="640" y="366" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#5B6B7C">한 번 만든 에이전트는 저장소에 축적되고,</text>
+    <text x="640" y="404" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#5B6B7C">다음부터는 이름만 불러 그대로 재사용한다</text>
+  </g>
+
+  <g id="tag-1">
+    <rect x="180" y="460" width="220" height="60" rx="30" fill="#F4F7FB"/>
+    <use data-icon="tabler-outline/puzzle-2" x="204" y="475" width="26" height="26" fill="#FF6B35" stroke-width="2"/>
+    <text x="242" y="497" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#1D2733">Skill = 일하는 방법</text>
+  </g>
+  <g id="tag-2">
+    <rect x="420" y="460" width="220" height="60" rx="30" fill="#F4F7FB"/>
+    <use data-icon="tabler-outline/settings-2" x="444" y="475" width="26" height="26" fill="#0D47A1" stroke-width="2"/>
+    <text x="482" y="497" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#1D2733">Subagent = 담당자</text>
+  </g>
+  <g id="tag-3">
+    <rect x="660" y="460" width="200" height="60" rx="30" fill="#F4F7FB"/>
+    <use data-icon="tabler-outline/book" x="684" y="475" width="26" height="26" fill="#1565C0" stroke-width="2"/>
+    <text x="722" y="497" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#1D2733">저장소에 축적</text>
+  </g>
+  <g id="tag-4">
+    <rect x="880" y="460" width="220" height="60" rx="30" fill="#F4F7FB"/>
+    <use data-icon="tabler-outline/route-2" x="904" y="475" width="26" height="26" fill="#2E7D32" stroke-width="2"/>
+    <text x="942" y="497" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#1D2733">이름 호출로 재사용</text>
+  </g>
+
+  <g id="cta">
+    <rect x="330" y="572" width="620" height="70" rx="35" fill="#FF6B35"/>
+    <use data-icon="tabler-outline/rocket" x="362" y="590" width="34" height="34" fill="#FFFFFF" stroke-width="2"/>
+    <text x="414" y="614" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#FFFFFF">지금 바로 slide-master Fork 후 Level 1부터 시작</text>
+  </g>
+
+  <g id="page-number">
+    <text x="1216" y="690" text-anchor="end" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" fill="#94A3B3">14 / 14</text>
+  </g>
+</svg>

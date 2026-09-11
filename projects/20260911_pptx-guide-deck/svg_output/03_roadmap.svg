@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1280 720" data-pptx-page-role="content">
+  <defs>
+    <linearGradient id="rail03" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1565C0"/>
+      <stop offset="100%" stop-color="#FF6B35"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="64" y="106" font-family="&quot;Pretendard ExtraBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="42" font-weight="800" fill="#1D2733">오늘의 3단계 로드맵</text>
+    <text x="64" y="150" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#0D47A1">Level 1 → 2 → 3 순으로 난이도를 높이며,</text>
+    <text x="64" y="188" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="30" font-weight="600" fill="#0D47A1">단발성 작업이면 Level 2까지만 해도 충분하다</text>
+  </g>
+
+  <line x1="140" y1="255" x2="140" y2="605" stroke="url(#rail03)" stroke-width="4" stroke-linecap="round"/>
+
+  <g id="roadmap-item-1">
+    <circle cx="140" cy="290" r="28" fill="#FFFFFF" stroke="#1565C0" stroke-width="3"/>
+    <text x="140" y="298" text-anchor="middle" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="20" font-weight="700" fill="#1565C0">1</text>
+    <rect x="200" y="252" width="900" height="76" rx="14" fill="#F4F7FB"/>
+    <text x="228" y="288" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">Level 1 · Skill 하나로 DOCX 워밍업</text>
+    <text x="228" y="314" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">스킬 설치 후 문서 자동 생성 실습</text>
+    <rect x="962" y="270" width="108" height="40" rx="20" fill="#FFFFFF" stroke="#1565C0" stroke-width="1.5"/>
+    <text x="1016" y="296" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" font-weight="600" fill="#1565C0">10분</text>
+  </g>
+
+  <g id="roadmap-item-2">
+    <circle cx="140" cy="424" r="28" fill="#FFFFFF" stroke="#1565C0" stroke-width="3"/>
+    <text x="140" y="432" text-anchor="middle" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="20" font-weight="700" fill="#1565C0">2</text>
+    <rect x="200" y="386" width="900" height="76" rx="14" fill="#F4F7FB"/>
+    <text x="228" y="422" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">Level 2 · GitHub Skill로 PPT 제작</text>
+    <text x="228" y="448" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">ppt-master 스킬로 PPT 초안 완성</text>
+    <rect x="962" y="404" width="108" height="40" rx="20" fill="#FFFFFF" stroke="#1565C0" stroke-width="1.5"/>
+    <text x="1016" y="430" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" font-weight="600" fill="#1565C0">20분</text>
+  </g>
+
+  <g id="roadmap-item-3">
+    <circle cx="140" cy="558" r="30" fill="#FF6B35"/>
+    <text x="140" y="566" text-anchor="middle" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">3</text>
+    <rect x="200" y="518" width="900" height="80" rx="14" fill="#F4F7FB"/>
+    <text x="228" y="556" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="24" font-weight="600" fill="#1D2733">Level 3 · 서브에이전트 파이프라인 구축</text>
+    <text x="228" y="584" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">4개 서브에이전트로 재사용 가능한 워크플로 구축</text>
+    <rect x="962" y="538" width="108" height="40" rx="20" fill="#FF6B35"/>
+    <text x="1016" y="564" text-anchor="middle" font-family="&quot;Pretendard SemiBold&quot;, Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" font-weight="600" fill="#FFFFFF">40분</text>
+  </g>
+
+  <g id="footer-caption">
+    <rect x="64" y="650" width="560" height="42" rx="21" fill="#F4F7FB"/>
+    <text x="94" y="676" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="18" fill="#5B6B7C">Level 3까지 다 안 해도 됨 — 단발성이면 Level 2까지 충분</text>
+  </g>
+
+  <g id="page-number">
+    <text x="1216" y="690" text-anchor="end" font-family="Pretendard, &quot;Malgun Gothic&quot;, sans-serif" font-size="16" fill="#94A3B3">3 / 14</text>
+  </g>
+</svg>

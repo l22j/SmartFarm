@@ -1,0 +1,174 @@
+# 브라우저 Claude Code로 PPT/문서 자동화 온보딩
+
+- 대상 청중: 브라우저 Claude Code로 문서 자동화(PPT/DOCX)를 처음 시작하는 사내 실무자 (개발 경험 적음)
+- 발표 시간: 약 20분
+- 전체 슬라이드 수: 14
+
+## 전체 스토리
+
+설치 없이 브라우저만으로 원본 문서를 PPT·한글 문서로 바꿀 수 있다는 문제의식에서 출발해, Skill(매뉴얼)과 Subagent(담당자)라는 두 핵심 개념을 이해한 뒤, 계정·저장소 준비 → Level 1(Skill 하나로 DOCX 워밍업) → Level 2(GitHub Skill인 ppt-master로 PPT 한 장 뽑고 PR로 반영) → Level 3(content-planner·slide-writer·ppt-builder·ppt-reviewer 4개 서브에이전트 파이프라인 구축과 재사용) 순으로 실습 난이도를 높여가며, 회사 한글 문서(HWP)는 docx 스킬과 한컴오피스 변환으로 처리하고, 마지막으로 매번 사람이 직접 확인해야 할 품질·보안 체크리스트와 '한 번 만들면 다음부터는 이름만 불러 재사용한다'는 핵심 메시지로 마무리하는 온보딩 스토리.
+
+---
+
+이 문서는 이미 슬라이드 단위로 구조와 문구가 확정된 발표 콘텐츠입니다.
+아래 슬라이드 순서·개수·제목·불릿·발표자 노트를 그대로 유지하며, 오직 시각 디자인(레이아웃/색상/타이포그래피/아이콘/다이어그램 표현)만 새로 설계해 주세요.
+
+## Slide 1. 브라우저 Claude Code로 문서 자동화 시작
+
+- layout: title
+- subtitle: 설치 없이, 브라우저만으로
+- speaker_notes: 오늘은 설치 과정 없이 브라우저에서 Claude Code를 열고, 원본 문서를 PPT와 한글 문서로 자동 변환하는 방법을 배웁니다. Pro 이상 플랜과 브라우저만 있으면 바로 시작할 수 있습니다. 실습 위주로 진행하니 함께 따라와 주세요.
+
+## Slide 2. 오늘 만드는 것: PPT와 HWP
+
+- layout: title_content
+- subtitle: 원본 문서 하나로 PPT와 HWP까지
+- bullets:
+  - 브라우저에서 Claude Code 실행 후 GitHub 저장소 연결
+  - 원본 문서 첨부와 한 프롬프트로 PPT 생성
+  - 서브에이전트 4개 파이프라인으로 다음 달까지 재사용
+  - 회사 한글 문서(HWP) 양식 유지한 채 내용 교체
+- visual (diagram): 원본 문서 → [PPT 만들기]/[한글 문서 만들기] 분기, PPT는 content-planner→slide-writer→ppt-builder→ppt-reviewer, 한글 문서는 docx 스킬→DOCX 생성→한컴에서 HWP 저장 흐름 재현
+- speaker_notes: 오늘 실습으로 원본 문서 하나에서 PPT와 한글 문서(HWP) 두 가지 결과물을 만들어 봅니다. PPT는 content-planner부터 ppt-reviewer까지 이어지는 파이프라인으로, 한글 문서는 docx 스킬과 한컴오피스 변환으로 처리합니다. 두 흐름 모두 설치 없이 브라우저에서 그대로 진행됩니다.
+
+## Slide 3. 오늘의 3단계 로드맵
+
+- layout: table
+- bullets:
+  - Level 1: Skill 하나로 DOCX 워밍업, 소요 10분
+  - Level 2: GitHub Skill로 PPT 제작, 소요 20분
+  - Level 3: 서브에이전트 파이프라인 구축, 소요 40분
+- caption: Level 3까지 다 안 해도 됨 — 단발성이면 Level 2까지 충분
+- visual (table): Level / 배우는 내용 / 소요 시간 3행 표
+- speaker_notes: 오늘은 Level 1, 2, 3 세 단계로 난이도를 높여가며 실습합니다. Level 1은 Skill 하나로 DOCX를 만들어보는 10분짜리 워밍업이고, Level 2는 GitHub Skill로 PPT 한 장을 뽑는 20분짜리 실습입니다. 매달 반복하는 업무가 아니라면 Level 2까지만 하셔도 충분하고, Level 3은 파이프라인을 구축해 재사용하고 싶은 분들을 위한 40분 과정입니다.
+
+## Slide 4. 핵심 개념: Skill과 Subagent
+
+- layout: table
+- bullets:
+  - Skill: AI에게 업무 방식을 가르치는 매뉴얼
+  - Subagent: 특정 역할을 전담하는 별도 담당자
+  - Claude=신입 직원, Skill=업무 매뉴얼
+  - Subagent=옆 팀 담당자, Template=표준 양식
+- visual (table): Claude=신입 직원 / Skill=업무 매뉴얼 / Subagent=옆 팀 담당자 / Template=표준 양식 비교표
+- speaker_notes: 본격적인 실습에 앞서 오늘 계속 나올 두 단어, Skill과 Subagent를 정리하겠습니다. Skill은 AI가 특정 작업을 어떻게 하는지 알려주는 매뉴얼이고, Subagent는 그 작업의 한 부분을 전담하는 별도 담당자라고 생각하시면 됩니다. 회사에 비유하면 Claude는 신입 직원, Skill은 그 직원이 보는 업무 매뉴얼, Subagent는 옆 팀 담당자에 해당합니다.
+
+## Slide 5. 준비물: 계정 3종과 GitHub 연동
+
+- layout: title_content
+- bullets:
+  - 이메일 — GitHub·Claude 가입용 준비
+  - GitHub 계정 — Claude Code 파일 저장소 역할
+  - Claude Pro 이상 플랜 — 브라우저 Claude Code 사용 자격
+  - claude.ai/code에서 GitHub 연동(Connect GitHub) 완료
+- caption: 이 준비는 최초 1회만 필요
+- speaker_notes: 실습을 시작하려면 이메일, GitHub 계정, Claude Pro 이상 플랜 세 가지가 필요합니다. Free 플랜에서는 브라우저 Claude Code가 열리지 않으니 반드시 Pro 이상인지 확인해 주세요. 계정 준비가 끝나면 claude.ai/code에서 GitHub 연동까지 마쳐야 저장소를 다룰 수 있습니다. 이 준비 과정은 처음 한 번만 하면 됩니다.
+
+## Slide 6. 저장소 준비: slide-master Fork
+
+- layout: title_content
+- bullets:
+  - slide-master 저장소 우상단 Fork 버튼 클릭
+  - Owner·Repository name 확인 후 Create fork 클릭
+  - Claude Code에서 Fork한 저장소 선택 및 연결
+  - 회사 기밀 저장소는 반드시 Private 설정
+- caption: 회사 기밀 저장소는 반드시 Private
+- visual (diagram): Fork 버튼 클릭 → 저장소 선택 → 연결 확인 3단계 흐름도
+- speaker_notes: 이제 오늘 실습에 쓸 저장소를 준비합니다. slide-master 저장소 페이지에서 Fork 버튼을 눌러 내 계정으로 복사하고, Claude Code에서 그 저장소를 선택해 연결하면 됩니다. 회사 자료가 들어가는 저장소는 반드시 Private으로 설정해야 한다는 점을 꼭 짚고 넘어가겠습니다.
+
+## Slide 7. Level 1: Skill로 DOCX 워밍업
+
+- layout: two_column
+- bullets:
+  - /plugin marketplace add anthropics/skills 실행
+  - /plugin install document-skills@anthropic-agent-skills 실행
+  - 원본 첨부 후 "docx 스킬로 업무보고 DOCX 만들어줘" 요청
+  - 결과 다운로드 후 Word·한컴오피스에서 확인
+- caption: 이 단계만으로도 회의록·주간보고는 충분
+- visual (image): 설치 명령어 2줄 코드 카드 + 첫 프롬프트 예시 텍스트 카드
+- speaker_notes: Level 1에서는 Document Skills 중 docx 스킬을 설치하고, 원본 파일을 첨부한 뒤 한 문장 프롬프트만으로 한국어 업무보고 DOCX를 만들어 봅니다. 설치 명령어 두 줄만 입력하면 준비가 끝나고, 결과물은 다운로드해서 Word나 한컴오피스로 확인하면 됩니다. 이 정도만으로도 회의록이나 주간보고 수준은 충분히 커버됩니다.
+
+## Slide 8. Level 2: ppt-master로 PPT 만들기
+
+- layout: two_column
+- bullets:
+  - 짧은 버전 — 경로 지정만으로 초안 생성
+  - 자세한 버전 — 장수·톤·색상·폰트 조건 추가
+  - 핵심 KPI·숫자 강조 지정
+  - 표·차트 적합 구간 시각화 지정
+  - 조건이 구체적일수록 결과 품질 향상
+- caption: 조건을 구체적으로 붙일수록 결과 품질 향상
+- visual (image): 짧은 버전 프롬프트와 조건이 붙은 자세한 버전 프롬프트를 나란히 비교
+- speaker_notes: Level 2에서는 slide-master 저장소의 ppt-master 스킬로 PPT를 만듭니다. 짧은 프롬프트만으로도 초안이 나오지만, 장수·톤·색상·폰트 같은 조건을 구체적으로 붙일수록 결과 품질이 눈에 띄게 좋아집니다. 오늘은 두 버전을 비교하면서 조건을 붙이는 연습을 해보겠습니다.
+
+## Slide 9. 결과 확인과 GitHub 자동 반영
+
+- layout: title_content
+- bullets:
+  - 격리 VM에서 파일 생성 후 브랜치 자동 생성
+  - 커밋·push 후 PR(Pull Request) 초안 생성
+  - PR 링크에서 Merge pull request로 반영
+  - 부분 수정은 채팅으로 즉시 요청 가능
+- caption: PR 확인과 Merge는 사람이 직접 클릭
+- visual (diagram): 격리 VM → 브랜치 생성 → 커밋/push → PR 생성 → Merge 5단계 플로우
+- speaker_notes: PPT가 완성되면 Claude가 자동으로 브랜치를 만들고 커밋한 뒤 PR을 올려줍니다. 사용자는 알려준 PR 링크를 열어 변경 내용을 확인하고 Merge pull request 버튼만 누르면 최종 반영됩니다. 부분이 마음에 안 들면 채팅으로 바로 수정을 요청할 수 있습니다.
+
+## Slide 10. Level 3: 4개 서브에이전트 파이프라인
+
+- layout: title_content
+- bullets:
+  - content-planner — 원본 분석 후 슬라이드 구조 설계
+  - slide-writer — 구조 JSON 기반 슬라이드별 문구 작성
+  - ppt-builder — ppt-master 스킬로 PPTX 실제 생성
+  - ppt-reviewer — 원본과 PPTX 대조 검수
+- caption: 단발성이면 생략 가능, 반복 업무·팀 표준화 시 필요
+- visual (diagram): 원본 문서 → 01-structure.json → 02-copy.json → outputs/final.pptx → 검수 리포트 흐름도
+- speaker_notes: Level 3에서는 PPT 제작 과정을 content-planner, slide-writer, ppt-builder, ppt-reviewer 네 개의 서브에이전트로 나눕니다. 각 담당자가 자기 역할에만 집중하기 때문에 중간 산출물을 JSON으로 저장해 특정 단계만 다시 돌릴 수 있고, 놓치는 부분도 줄어듭니다. 단발성 작업이라면 굳이 나눌 필요는 없고, 매달 반복하거나 팀 표준화가 목표일 때 유용합니다.
+
+## Slide 11. 파이프라인 실행과 다음 번 재사용
+
+- layout: two_column
+- bullets:
+  - 최초 실행 — 4단계 파이프라인 상세 지시 프롬프트
+  - 재사용 — 원본 경로만 바꾼 세 줄 프롬프트
+  - 검수 이슈 발견 시 해당 단계만 재실행
+  - 에이전트는 저장소에 이미 존재, 재생성 불필요
+- caption: 에이전트는 이미 저장소에 있어 이름만 부르면 재사용
+- visual (image): 최초 실행 프롬프트와 재사용 시 세 줄 프롬프트를 나란히 비교
+- speaker_notes: 파이프라인을 처음 만들 때는 4단계를 하나하나 지정하는 긴 프롬프트가 필요하지만, 한 번 구축해두면 다음 달부터는 원본 경로만 바꾼 세 줄짜리 프롬프트로 똑같이 재사용할 수 있습니다. 에이전트는 이미 저장소 안에 있으므로 새로 만들 필요 없이 이름만 불러 호출하면 됩니다. 검수 단계에서 문제가 발견되면 해당 단계만 다시 실행해 수정합니다.
+
+## Slide 12. 한글 문서(HWP) 처리 흐름
+
+- layout: title_content
+- bullets:
+  - docx 스킬로 회사 양식 유지한 DOCX 생성
+  - 완성 파일 다운로드
+  - 한컴오피스에서 파일 열기
+  - 다른 이름으로 저장 후 한글 문서(HWP) 선택
+- caption: DOCX-HWP 서식은 완벽히 유지되지 않을 수 있어 직접 확인 필요
+- visual (diagram): docx 스킬 생성 → 다운로드 → 한컴 열기 → 다른 이름으로 저장(HWP) 4단계 흐름도
+- speaker_notes: 한글 문서는 HWP를 직접 생성하는 스킬이 없기 때문에, docx 스킬로 회사 양식을 유지한 DOCX를 먼저 만듭니다. 그 다음 파일을 다운로드해 한컴오피스에서 열고, 다른 이름으로 저장에서 한글 문서(HWP)를 선택하면 변환이 끝납니다. DOCX와 HWP 사이 서식이 완벽히 유지되지 않을 수 있으니 반드시 눈으로 한 번 확인해 주세요.
+
+## Slide 13. 매번 사람이 확인할 것
+
+- layout: table
+- bullets:
+  - 숫자·날짜·고유명사의 원본 일치 확인
+  - 핵심 메시지 누락 여부 확인
+  - 폰트 깨짐 여부 확인(PowerPoint·한컴에서 직접 열람)
+  - 대외 문서의 법무·홍보 리뷰
+  - 회사 기밀 자료의 Private 저장소 보관
+- caption: AI는 초안 생성과 반복 축소를 돕는 도구, 최종 책임은 사람
+- visual (table): 확인 항목 5개 체크리스트 카드
+- speaker_notes: AI가 초안을 아무리 빠르게 만들어줘도 마지막 확인은 항상 사람의 몫입니다. 숫자·날짜·고유명사가 원본과 맞는지, 핵심 메시지가 빠지지 않았는지, 폰트가 깨지지 않았는지는 매번 직접 열어서 확인해야 합니다. 대외에 나가는 문서라면 법무·홍보 리뷰도 거쳐야 하고, 회사 기밀 자료는 반드시 Private 저장소에만 두어야 합니다.
+
+## Slide 14. 오늘 핵심 한 줄
+
+- layout: closing
+- bullets:
+  - Skill — 일하는 방법
+  - Subagent — 특정 역할 담당자
+  - 한 번 만든 에이전트, 저장소에 축적
+  - 다음부터는 이름만 호출해 재사용
+- caption: 지금 바로 slide-master Fork 후 Level 1부터 시작
+- speaker_notes: 오늘 핵심은 한 줄로 정리됩니다. Skill은 일하는 방법이고 Subagent는 역할을 맡은 담당자이며, 한 번 만들어두면 다음부터는 이름만 불러 그대로 재사용할 수 있습니다. 오늘 배운 내용을 바탕으로 지금 바로 slide-master를 Fork해서 Level 1부터 직접 실습해 보시길 바랍니다.
