@@ -27,8 +27,8 @@ claude.ai Artifact의 `db`(실시간 공유 문서 DB) 기능으로 동작하는
 (Artifact 도구에 `url` 파라미터로 해당 주소를 넘겨서 `write_db`/재게시).
 
 DB 스키마 (두 아티팩트 공통):
-- `agents/report-reader`, `agents/structure-planner`, `agents/slide-writer`, `agents/ppt-builder`
-  각 문서: `{ state, label, updatedAt }`
+- `agents/report-reader`, `agents/structure-planner`, `agents/slide-writer`, `agents/ppt-builder`,
+  `agents/data-analyst` 각 문서: `{ state, label, updatedAt }`
   - `state`: `idle | thinking | reading | typing | bash | waiting | done` 중 하나
   - 서브에이전트 호출 직전 = 진행 상태(reading/typing/thinking/bash 등)로 update,
     호출 완료 직후 = `done`으로 update. `label`은 사람이 읽을 짧은 한국어 설명.
@@ -38,42 +38,53 @@ DB 스키마 (두 아티팩트 공통):
 페이지 자체(HTML)는 `.claude/agents/` 정의와 무관하게 독립적으로 존재하므로, 코드를 다시 안 짜도
 DB만 갱신하면 시각화가 살아있다.
 
+`data-analyst`는 make-slides 파이프라인(위 4개)에는 포함되지 않는 별도 서브에이전트다. 데이터/수치
+분석 요청이 오면 이 에이전트를 쓰고, 호출 전후로 역시 이 픽셀 오피스 DB를 갱신한다 (정의:
+`.claude/agents/data-analyst.md`).
+
 ## 캐릭터 스프라이트 (실제 이미지)
 
-두 버전 다 이제 코드로 그린 픽셀이 아니라 **실제 캐릭터 이미지**를 씁니다.
+**세 번째 개정판.** 이전에 두 차례(정면 데스크형 개별 시트 → 탑뷰 걷기 사이클) 시도했던 에셋은
+스타일이 서로 안 맞아서 전부 버리고, **하나의 통합 레퍼런스 시트**에서 5명 전원(+방 배경)을
+동일한 톤으로 잘라낸 "카드형" 이미지로 교체했다. 지금 커밋된 게 최종본이다 — 이전 두 스타일로
+되돌아가지 말 것.
 
-- 원본 소스(8포즈 그리드 시트, 잘라내기 전): `webview-ui/assets/characters/_source/*.png`
-- 포즈별로 잘라낸 최종 파일: `webview-ui/assets/characters/{agent-id}/{pose}.png`
-  - agent-id: `report-reader`(청록) · `structure-planner`(보라) · `slide-writer`(골드) · `ppt-builder`(코랄)
-  - pose: `idle | typing | reading | bash | waiting | thinking | done | walk`
-    (walk 제외 7개는 각각 db의 `state` 값과 1:1 대응. walk는 문→책상 입장 애니메이션 전용)
-- `_source/spare-indigo-sheet.png`: 아직 어떤 에이전트에도 배정 안 한 5번째 캐릭터(남색). 향후
-  "오케스트레이터(나 자신)" 캐릭터 등으로 쓸 수 있음 — 아직 사용 안 함.
-
-**중요 — 이 환경엔 Artifact의 `upload_asset` 액션이 없다** (문서엔 있다고 나오지만 실제 도구 스키마엔
-없음, 확인됨). 그래서 이미지는 asset 업로드가 아니라 **base64 data URI로 HTML에 직접 인라인**한다:
-`webview-ui/assets/characters/{agent}/{pose}.png` 파일들을 읽어서 `window.SPRITES = {agent:{pose:'data:image/png;base64,...'}}` 형태의 JS 객체로 만들어 스크립트 최상단에 심는 방식. 두 아티팩트 HTML 모두
-이 구조를 쓰고 있음 (파일당 약 2.5MB, 16MB 한도 내).
+- 원본 소스: `webview-ui/assets/characters/_source/master-reference-sheet.png`
+  (5명 × 8포즈 + 방 배경 + 가구/이펙트가 한 장에 다 들어있는 레퍼런스 시트, 사용자 제공)
+- 방 배경: `webview-ui/assets/office/room.png` (같은 시트에서 크롭, 탑뷰 회의실 일러스트를
+  배너 이미지로 그대로 사용 — 더 이상 캔버스로 방을 코드로 그리지 않음)
+- 캐릭터별 최종 파일: `webview-ui/assets/characters/{agent-id}/{pose}.png`
+  - agent-id: `report-reader`(청록) · `structure-planner`(보라) · `slide-writer`(골드) ·
+    `ppt-builder`(코랄) · `data-analyst`(블루, 새로 추가)
+  - pose: `idle | typing | reading | bash | waiting | thinking | done` (7개, db `state`와 1:1 대응)
+  - 각 파일은 레퍼런스 시트에서 그 칸을 크롭 → 3배 업스케일 → **둥근 사각 카드**로 마스킹한 것
+    (배경을 투명 처리하려 했으나 그을음 아티팩트가 생겨서, 대신 원본 배경을 살린 카드 형태로
+    타협함 — 이게 지금 기준의 "깔끔한" 버전).
+  - `walk` 포즈는 더 이상 없음: 입장 연출은 걷기 프레임 대신 각 카드가 화면에 나타날 때
+    CSS로 살짝 튀어오르며 페이드인(pop-in)하는 방식으로 단순화했다.
 
 이미지를 새로 바꾸거나 포즈를 추가할 때:
-1. `webview-ui/assets/characters/{agent}/{pose}.png` 갱신
+1. `webview-ui/assets/characters/{agent}/{pose}.png` (그리고 필요하면 `webview-ui/assets/office/room.png`) 갱신
 2. 아래 파이썬으로 base64 재생성 후 두 아티팩트 HTML에 주입, 각각 재게시
    ```python
    import base64, json, os
    base = 'webview-ui/assets/characters'
-   AGENTS = ['report-reader','structure-planner','slide-writer','ppt-builder']
-   POSES = ['idle','typing','reading','bash','waiting','thinking','done','walk']
+   AGENTS = ['report-reader','structure-planner','slide-writer','ppt-builder','data-analyst']
+   POSES = ['idle','typing','reading','bash','waiting','thinking','done']
    sprites = {a: {p: 'data:image/png;base64,' + base64.b64encode(
        open(os.path.join(base,a,p+'.png'),'rb').read()).decode()
        for p in POSES} for a in AGENTS}
+   room_uri = 'data:image/png;base64,' + base64.b64encode(
+       open('webview-ui/assets/office/room.png','rb').read()).decode()
    # -> js = 'window.SPRITES = ' + json.dumps(sprites) + ';' 를 HTML의
-   #    <script>/*__SPRITES__*/</script> 자리(또는 기존 SPRITES 선언부)에 주입
+   #    <script>/*__SPRITES__*/</script> 자리에, room_uri는 room-banner <img src="...">
+   #    자리(또는 ROOM_SRC_PLACEHOLDER)에 주입
    ```
 3. `Artifact` 도구로 각 URL에 재게시 (`url` 파라미터로 기존 주소 지정, `file_path`는 새로 만든 HTML)
 
-캐릭터 이미지는 자체적으로 책상+모니터+의자까지 포함하고 있으므로, 화면에서 방(벽/바닥/창문/문/러그/화분)만
-캔버스로 그리고 그 위에 이 이미지들을 `<img>`로 절대 위치시키는 구조다 (더 이상 책상/모니터를
-코드로 그리지 않음).
+**중요 — 이 환경엔 Artifact의 `upload_asset` 액션이 없다** (문서엔 있다고 나오지만 실제 도구 스키마엔
+없음, 확인됨). 그래서 이미지는 asset 업로드가 아니라 **base64 data URI로 HTML에 직접 인라인**한다
+(파일당 약 3.7MB, 16MB 한도 내).
 
 ## 재사용 관련 참고
 
