@@ -66,7 +66,7 @@
 
 <!-- 1. Cover -->
 <section class="slide is-active" data-title="Cover">
-  <div class="deck-header"><span class="eyebrow">사내 온보딩 · 약 20분</span><span class="eyebrow">html-ppt</span></div>
+  <div class="deck-header"><span class="eyebrow">사내 온보딩 세션</span><span class="eyebrow">html-ppt</span></div>
   <div class="anim-stagger-list">
     <p class="kicker">브라우저 Claude Code</p>
     <h1 class="h1 anim-fade-up" data-anim="fade-up">브라우저 Claude Code로<br><span class="gradient-text">문서 자동화</span> 시작</h1>
@@ -149,6 +149,7 @@
     <li class="done"><span class="b"></span><span class="t">Claude Pro 이상 플랜 — 브라우저 Claude Code 사용 자격</span></li>
     <li class="done"><span class="b"></span><span class="t">claude.ai/code에서 GitHub 연동(Connect GitHub) 완료</span><span class="tag">최초 1회</span></li>
   </ul>
+  <p class="dim2 mt-m" style="font-size:13px">이 준비는 최초 1회만 필요</p>
   <div class="deck-footer"><span class="dim2"></span><span class="slide-number" data-current="5" data-total="14"></span></div>
   <div class="notes">실습을 시작하려면 이메일, GitHub 계정, Claude Pro 이상 플랜 세 가지가 필요합니다. Free 플랜에서는 브라우저 Claude Code가 열리지 않으니 반드시 Pro 이상인지 확인해 주세요. 계정 준비가 끝나면 claude.ai/code에서 GitHub 연동까지 마쳐야 저장소를 다룰 수 있습니다. 이 준비 과정은 처음 한 번만 하면 됩니다.</div>
 </section>
@@ -162,7 +163,7 @@
     <div class="step"><div class="num">2</div><h4>Create fork</h4><p>Owner·Repository name 확인 후 Create fork 클릭</p></div>
     <div class="step accent"><div class="num">3</div><h4>저장소 연결</h4><p>Claude Code에서 Fork한 저장소 선택 및 연결</p></div>
   </div>
-  <div class="banner-warn">⚠️ 회사 기밀 저장소는 반드시 Private로 설정</div>
+  <div class="banner-warn">⚠️ 회사 기밀 저장소는 반드시 Private 설정</div>
   <div class="deck-footer"><span class="dim2"></span><span class="slide-number" data-current="6" data-total="14"></span></div>
   <div class="notes">이제 오늘 실습에 쓸 저장소를 준비합니다. slide-master 저장소 페이지에서 Fork 버튼을 눌러 내 계정으로 복사하고, Claude Code에서 그 저장소를 선택해 연결하면 됩니다. 회사 자료가 들어가는 저장소는 반드시 Private으로 설정해야 한다는 점을 꼭 짚고 넘어가겠습니다.</div>
 </section>
@@ -170,7 +171,7 @@
 <!-- 7. Level 1 DOCX -->
 <section class="slide" data-title="Level 1">
   <p class="kicker">Level 1 · 10분</p>
-  <h2 class="h2">Skill로 DOCX 워밍업</h2>
+  <h2 class="h2">Level 1: Skill로 DOCX 워밍업</h2>
   <div class="steps c4 anim-stagger-list" data-anim-target>
     <div class="step"><div class="num">1</div><h4>마켓플레이스 추가</h4><div class="codecard"><code>/plugin marketplace add anthropics/skills</code></div></div>
     <div class="step"><div class="num">2</div><h4>Skill 설치</h4><div class="codecard"><code>/plugin install document-skills@anthropic-agent-skills</code></div></div>
@@ -185,7 +186,7 @@
 <!-- 8. Level 2 ppt-master -->
 <section class="slide" data-title="Level 2">
   <p class="kicker">Level 2 · 20분</p>
-  <h2 class="h2">ppt-master로 PPT 만들기</h2>
+  <h2 class="h2">Level 2: ppt-master로 PPT 만들기</h2>
   <ul class="todo anim-stagger-list" data-anim-target>
     <li><span class="b">1</span><span class="t">짧은 버전 — 경로 지정만으로 초안 생성</span></li>
     <li><span class="b">2</span><span class="t">자세한 버전 — 장수·톤·색상·폰트 조건 추가</span></li>
@@ -216,7 +217,7 @@
 <!-- 10. 4개 서브에이전트 -->
 <section class="slide" data-title="Level 3">
   <p class="kicker">Level 3 · 40분</p>
-  <h2 class="h2">4개 서브에이전트 파이프라인</h2>
+  <h2 class="h2">Level 3: 4개 서브에이전트 파이프라인</h2>
   <div class="steps c4 anim-stagger-list" data-anim-target>
     <div class="step"><div class="num">1</div><h4>content-planner</h4><p>원본 분석 후 슬라이드 구조 설계</p><span class="out">출력 · structure.json</span></div>
     <div class="step"><div class="num">2</div><h4>slide-writer</h4><p>구조 JSON 기반 슬라이드별 문구 작성</p><span class="out">출력 · copy.json</span></div>
@@ -235,6 +236,7 @@
   <div class="vs">
     <div class="card side">
       <h3>🧾 최초 실행</h3>
+      <p class="dim" style="font-size:13px;margin:0 0 10px">4단계 파이프라인 상세 지시 프롬프트</p>
       <pre><code>1단계: content-planner로 구조 설계
 2단계: slide-writer로 문구 작성
 3단계: ppt-builder로 PPTX 생성
@@ -244,6 +246,7 @@
     <div class="mid">→</div>
     <div class="card side">
       <h3>♻️ 재사용</h3>
+      <p class="dim" style="font-size:13px;margin:0 0 10px">원본 경로만 바꾼 세 줄 프롬프트</p>
       <pre><code>projects/2026-10/실적보고서.pdf 원본
 지난번과 같은 파이프라인 실행
 결과: outputs/2026-10-report.pptx</code></pre>
