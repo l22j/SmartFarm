@@ -38,6 +38,43 @@ DB 스키마 (두 아티팩트 공통):
 페이지 자체(HTML)는 `.claude/agents/` 정의와 무관하게 독립적으로 존재하므로, 코드를 다시 안 짜도
 DB만 갱신하면 시각화가 살아있다.
 
+## 캐릭터 스프라이트 (실제 이미지)
+
+두 버전 다 이제 코드로 그린 픽셀이 아니라 **실제 캐릭터 이미지**를 씁니다.
+
+- 원본 소스(8포즈 그리드 시트, 잘라내기 전): `webview-ui/assets/characters/_source/*.png`
+- 포즈별로 잘라낸 최종 파일: `webview-ui/assets/characters/{agent-id}/{pose}.png`
+  - agent-id: `report-reader`(청록) · `structure-planner`(보라) · `slide-writer`(골드) · `ppt-builder`(코랄)
+  - pose: `idle | typing | reading | bash | waiting | thinking | done | walk`
+    (walk 제외 7개는 각각 db의 `state` 값과 1:1 대응. walk는 문→책상 입장 애니메이션 전용)
+- `_source/spare-indigo-sheet.png`: 아직 어떤 에이전트에도 배정 안 한 5번째 캐릭터(남색). 향후
+  "오케스트레이터(나 자신)" 캐릭터 등으로 쓸 수 있음 — 아직 사용 안 함.
+
+**중요 — 이 환경엔 Artifact의 `upload_asset` 액션이 없다** (문서엔 있다고 나오지만 실제 도구 스키마엔
+없음, 확인됨). 그래서 이미지는 asset 업로드가 아니라 **base64 data URI로 HTML에 직접 인라인**한다:
+`webview-ui/assets/characters/{agent}/{pose}.png` 파일들을 읽어서 `window.SPRITES = {agent:{pose:'data:image/png;base64,...'}}` 형태의 JS 객체로 만들어 스크립트 최상단에 심는 방식. 두 아티팩트 HTML 모두
+이 구조를 쓰고 있음 (파일당 약 2.5MB, 16MB 한도 내).
+
+이미지를 새로 바꾸거나 포즈를 추가할 때:
+1. `webview-ui/assets/characters/{agent}/{pose}.png` 갱신
+2. 아래 파이썬으로 base64 재생성 후 두 아티팩트 HTML에 주입, 각각 재게시
+   ```python
+   import base64, json, os
+   base = 'webview-ui/assets/characters'
+   AGENTS = ['report-reader','structure-planner','slide-writer','ppt-builder']
+   POSES = ['idle','typing','reading','bash','waiting','thinking','done','walk']
+   sprites = {a: {p: 'data:image/png;base64,' + base64.b64encode(
+       open(os.path.join(base,a,p+'.png'),'rb').read()).decode()
+       for p in POSES} for a in AGENTS}
+   # -> js = 'window.SPRITES = ' + json.dumps(sprites) + ';' 를 HTML의
+   #    <script>/*__SPRITES__*/</script> 자리(또는 기존 SPRITES 선언부)에 주입
+   ```
+3. `Artifact` 도구로 각 URL에 재게시 (`url` 파라미터로 기존 주소 지정, `file_path`는 새로 만든 HTML)
+
+캐릭터 이미지는 자체적으로 책상+모니터+의자까지 포함하고 있으므로, 화면에서 방(벽/바닥/창문/문/러그/화분)만
+캔버스로 그리고 그 위에 이 이미지들을 `<img>`로 절대 위치시키는 구조다 (더 이상 책상/모니터를
+코드로 그리지 않음).
+
 ## 재사용 관련 참고
 
 - 위 서브에이전트/커맨드 파일들은 이 저장소에 커밋되어 있어 이 저장소를 여는 세션이면 자동 로드된다.
