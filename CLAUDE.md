@@ -57,28 +57,43 @@ DB만 갱신하면 시각화가 살아있다.
   - agent-id: `report-reader`(청록) · `structure-planner`(보라) · `slide-writer`(골드) ·
     `ppt-builder`(코랄) · `data-analyst`(블루, 새로 추가)
   - pose: `idle | typing | reading | bash | waiting | thinking | done` (7개, db `state`와 1:1 대응)
-  - 각 파일은 레퍼런스 시트에서 그 칸을 크롭 → 3배 업스케일 → **둥근 사각 카드**로 마스킹한 것
-    (배경을 투명 처리하려 했으나 그을음 아티팩트가 생겨서, 대신 원본 배경을 살린 카드 형태로
-    타협함 — 이게 지금 기준의 "깔끔한" 버전).
-  - `walk` 포즈는 더 이상 없음: 입장 연출은 걷기 프레임 대신 각 카드가 화면에 나타날 때
-    CSS로 살짝 튀어오르며 페이드인(pop-in)하는 방식으로 단순화했다.
+  - 각 파일은 레퍼런스 시트에서 그 칸을 크롭(칼럼 폭 93px, `GRID_X0=668, GRID_Y0=58, ROW_H=120.4`)
+    → 3배 업스케일 → **둥근 사각 카드**로 마스킹한 것 (배경을 투명 처리하려 했으나 그을음
+    아티팩트가 생겨서, 대신 원본 배경을 살린 카드 형태로 타협함 — 이게 지금 기준의 "깔끔한" 버전).
+  - **걷는 모션도 있음**: `webview-ui/assets/characters/{agent-id}/walk{0-3}.png` (4프레임 걷기
+    사이클, 레퍼런스 시트의 desk 칸들 바로 뒤쪽 `x = GRID_X0+651`부터 폭 `[54,53,53,55]`px로
+    크롭). 카드 아래 방 배너(`.room-banner`) 위에 `.walker` `<img>`로 절대 위치시켜, 각 에이전트가
+    자기 자리 앞에서 `xMin~xMax`(%) 구간을 좌우로 계속 왕복하는 **상시 배경 애니메이션**이다
+    (한 번 걸어 들어오는 입장 연출이 아니라 끊임없는 patrol). `startWalker(a)`가
+    `window.SPRITES_WALK[agent-id]`(4장 배열)로 220ms마다 프레임을 바꾸고, 1550ms마다 방향을
+    바꾸며 `scaleX(-1)`로 좌우 반전한다. 로스터 카드 쪽 이미지(포즈 7종)는 그대로 `state` 변화에
+    따라 pop-in 애니메이션과 함께 교체되는 정적 카드로 유지 — 걷기는 방 배너, 상태 아이콘은
+    카드, 이렇게 역할이 분리되어 있다.
 
 이미지를 새로 바꾸거나 포즈를 추가할 때:
-1. `webview-ui/assets/characters/{agent}/{pose}.png` (그리고 필요하면 `webview-ui/assets/office/room.png`) 갱신
+1. `webview-ui/assets/characters/{agent}/{pose}.png`, `walk{0-3}.png` (그리고 필요하면
+   `webview-ui/assets/office/room.png`) 갱신
 2. 아래 파이썬으로 base64 재생성 후 두 아티팩트 HTML에 주입, 각각 재게시
    ```python
    import base64, json, os
    base = 'webview-ui/assets/characters'
    AGENTS = ['report-reader','structure-planner','slide-writer','ppt-builder','data-analyst']
    POSES = ['idle','typing','reading','bash','waiting','thinking','done']
-   sprites = {a: {p: 'data:image/png;base64,' + base64.b64encode(
-       open(os.path.join(base,a,p+'.png'),'rb').read()).decode()
-       for p in POSES} for a in AGENTS}
+   sprites = {}
+   sprites_walk = {}
+   for a in AGENTS:
+       sprites[a] = {p: 'data:image/png;base64,' + base64.b64encode(
+           open(os.path.join(base,a,p+'.png'),'rb').read()).decode()
+           for p in POSES}
+       sprites_walk[a] = ['data:image/png;base64,' + base64.b64encode(
+           open(os.path.join(base,a,f'walk{i}.png'),'rb').read()).decode()
+           for i in range(4)]
    room_uri = 'data:image/png;base64,' + base64.b64encode(
        open('webview-ui/assets/office/room.png','rb').read()).decode()
-   # -> js = 'window.SPRITES = ' + json.dumps(sprites) + ';' 를 HTML의
-   #    <script>/*__SPRITES__*/</script> 자리에, room_uri는 room-banner <img src="...">
-   #    자리(또는 ROOM_SRC_PLACEHOLDER)에 주입
+   # -> js = 'window.SPRITES = ' + json.dumps(sprites) + ';\n' \
+   #         'window.SPRITES_WALK = ' + json.dumps(sprites_walk) + ';'
+   #    를 HTML의 <script>/*__SPRITES__*/</script> 자리에, room_uri는 room-banner
+   #    <img src="..."> 자리(또는 ROOM_SRC_PLACEHOLDER)에 주입
    ```
 3. `Artifact` 도구로 각 URL에 재게시 (`url` 파라미터로 기존 주소 지정, `file_path`는 새로 만든 HTML)
 
